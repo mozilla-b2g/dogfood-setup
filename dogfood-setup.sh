@@ -30,8 +30,11 @@ pref("app.update.channel", "stable");
 pref("app.update.url", "http://update.boot2gecko.org/%CHANNEL%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%");
 DOGFOOD_UPDATES
 
+echo "$DOGFOOD_ID" >$TMP_DIR/dogfoodid
+
 $ADB remount
 $ADB push $TMP_DIR/dogfood_id.js $B2G_PREF_DIR/dogfood_id.js
 $ADB push $TMP_DIR/dogfood_updates.js $B2G_PREF_DIR/dogfood_updates.js
+$ADB push $TMP_DIR/dogfoodid /data/local/dogfoodid
 
 $ADB shell "stop b2g; start b2g"
