@@ -27,7 +27,7 @@ DOGFOOD_ID
 
 cat >$TMP_DIR/dogfood_updates.js <<DOGFOOD_UPDATES
 pref("app.update.channel", "stable");
-pref("app.update.url", "http://update.boot2gecko.org/%CHANNEL%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%");
+pref("app.update.url", "http://update.boot2gecko.org/%CHANNEL%/unagi1/%VERSION%/%BUILD_ID%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%");
 DOGFOOD_UPDATES
 
 echo "$DOGFOOD_ID" >$TMP_DIR/dogfoodid
