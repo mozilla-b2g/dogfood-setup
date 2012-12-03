@@ -26,7 +26,6 @@ pref("prerelease.dogfood.id", "$DOGFOOD_ID");
 DOGFOOD_ID
 
 cat >$TMP_DIR/dogfood_updates.js <<DOGFOOD_UPDATES
-pref("app.update.channel", "stable");
 # Uncomment next line if flashing a build pre-FOTA (11/14/2012)
 # pref("app.update.url", "http://update.boot2gecko.org/%CHANNEL%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%");
 # Otherwise use update url below
