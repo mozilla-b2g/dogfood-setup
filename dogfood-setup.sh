@@ -25,11 +25,13 @@ pref("distribution.id", "$DOGFOOD_ID");
 pref("prerelease.dogfood.id", "$DOGFOOD_ID");
 DOGFOOD_ID
 
-cat >$TMP_DIR/dogfood_updates.js <<DOGFOOD_UPDATES
 # OTA update url below for general dogfooding
-pref("app.update.url", "http://update.boot2gecko.org/%CHANNEL%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%");
+APP_UPDATE_URL="http://update.boot2gecko.org/%CHANNEL%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%"
 # Comment out above and uncomment next line if flashing a build post-FOTA
-# pref("app.update.url", "http://update.boot2gecko.org/%CHANNEL%/%PRODUCT_MODEL%/%VERSION%/%BUILD_ID%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%");
+# APP_UPDATE_URL="http://update.boot2gecko.org/%CHANNEL%/%PRODUCT_MODEL%/%VERSION%/%BUILD_ID%/update.xml?build_id=%BUILD_ID%&version=%VERSION%&dogfood_id=%DISTRIBUTION%"
+
+cat >$TMP_DIR/dogfood_updates.js <<DOGFOOD_UPDATES
+pref("app.update.url", "$APP_UPDATE_URL");
 DOGFOOD_UPDATES
 
 echo "$DOGFOOD_ID" >$TMP_DIR/dogfoodid
